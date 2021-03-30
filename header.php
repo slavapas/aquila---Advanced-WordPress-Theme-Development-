@@ -25,6 +25,8 @@ if (!defined('ABSPATH')) {
 	if (function_exists('wp_body_open')) {
 		wp_body_open();
 	} ?>
-	<header>
-		Header
-	</header>
+	<div id="page" class="site">
+
+		<header id="masthead" class="site-header" role="banner"></header>
+		<?php get_template_part('template-parts/header/nav'); ?>
+		<div id="content" class="site-content">
