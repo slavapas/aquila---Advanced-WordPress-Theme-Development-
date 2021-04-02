@@ -24,10 +24,21 @@ $pathScript1 = get_theme_file_path('assets/js/script.js');
 // echo '$pathMainScript ' . filemtime($pathMainScript) . '<br>';
 // echo '$pathScript ' . filemtime($pathScript);
 
+if (!defined('AQUILA_DIR_PATH')) {
+	define('AQUILA_DIR_PATH', get_template_directory());
+}
+
+echo '<pre>';
+print_r(AQUILA_DIR_PATH);
+echo '</pre>';
+require_once AQUILA_DIR_PATH . '/inc/helpers/autoloader.php';
+
+
+
+
 
 // add scripts and styles
-function aquila_enqueue_scripts()
-{
+function aquila_enqueue_scripts() {
 	// the path to the main style.css file
 	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/src/library/css/bootstrap.min.css', [], '', 'all');
 	// wp_enqueue_style('wp-bootstrap-starter-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css');
